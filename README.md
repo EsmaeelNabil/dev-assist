@@ -4,24 +4,22 @@
 
 in `settings.gradle.kts`
 
+
 ```gradle
-	dependencyResolutionManagement {
-		//..
-		repositories {
-			//..
-			maven { url = uri("https://jitpack.io") }
-		}
-	}
+dependencyResolutionManagement {
+    repositories {
+        maven { url = uri("https://jitpack.io") }
+    }
+}
 ```
 
 and in `build.gradle.kts`
 
 ```gradle
-	dependencies {
-	        implementation 'com.github.EsmaeelNabil:dev-assist:v0.0.1'
-	}
+dependencies {
+    implementation 'com.github.EsmaeelNabil:dev-assist:v0.0.1'
+}
 ```
-
 
 ![image](https://github.com/user-attachments/assets/358249ec-b7a2-4bc7-b3af-6b50eb1f201b)
 
