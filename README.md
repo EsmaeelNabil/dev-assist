@@ -1,4 +1,4 @@
-# dev-assist
+# dev-assist [🔴 Under development 🔴]
 
 ### Usage
 
