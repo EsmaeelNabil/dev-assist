@@ -1,0 +1,12 @@
+package dev.supersam.devassist.api
+
+import android.content.Context
+
+/** Provider for adding custom action buttons/items to the overlay. */
+interface DebugAction {
+    /** Title/Label for the action button. */
+    val title: String
+
+    /** Action to perform when the button is clicked. Receives context. */
+    suspend fun onAction(context: Context)
+}

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">sie</string>
+    <string name="accessibility_service_description">Touch automation service for performing taps and gestures</string>
+</resources>
