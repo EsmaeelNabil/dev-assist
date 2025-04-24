@@ -43,6 +43,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.DialogFragment
+import dev.supersam.devassist.DevAssistCache
 import dev.supersam.devassist.api.DebugAction
 import dev.supersam.devassist.api.DebugInfoProvider
 import dev.supersam.devassist.api.DebugOverlayRegistry
@@ -114,6 +115,12 @@ fun DebugOverlayScreen(
     var showSnackbarMessage by remember { mutableStateOf<String?>(null) }
     val snackbarHostState = remember { SnackbarHostState() }
 
+    var cache by remember { mutableStateOf("") }
+
+    LaunchedEffect(Unit) {
+        cache = DevAssistCache.getAll().toString()
+    }
+
     LaunchedEffect(showSnackbarMessage) {
         showSnackbarMessage?.let {
             snackbarHostState.showSnackbar(it)
@@ -141,6 +148,20 @@ fun DebugOverlayScreen(
                 .padding(horizontal = 16.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+
+            item {
+                Text(
+                    "Cache",
+                    style = MaterialTheme.typography.titleLarge,
+                    modifier = Modifier.padding(bottom = 8.dp, top = 8.dp)
+                )
+
+                Text(
+                    cache,
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.padding(bottom = 8.dp)
+                )
+            }
 
             item {
                 Text(

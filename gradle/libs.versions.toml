@@ -13,7 +13,7 @@ composeBom = "2024.09.00"
 appcompat = "1.7.0"
 material = "1.10.0"
 startupRuntime = "1.2.0"
-
+runfig = "0.0.1"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "startupRuntime" }
@@ -40,4 +40,5 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+runfig = {id = "dev.supersam.runfig", version.ref = "runfig"}
 

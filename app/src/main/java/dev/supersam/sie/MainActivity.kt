@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
                         Button(onClick = {
 
                         }) {
-                            Text("Tap")
+                            Text(BuildConfig.VERSION_NAME)
                         }
 
                     }
