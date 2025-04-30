@@ -1,5 +1,6 @@
 [versions]
 agp = "8.9.0"
+devAssistVersion = "v0.0.2"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -13,10 +14,11 @@ composeBom = "2024.09.00"
 appcompat = "1.7.0"
 material = "1.10.0"
 startupRuntime = "1.2.0"
-runfig = "0.0.1"
+devassist = "0.0.1"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "startupRuntime" }
+devAssist = { module = "com.github.EsmaeelNabil:dev-assist", version.ref = "devAssistVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -40,5 +42,5 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
-runfig = {id = "dev.supersam.runfig", version.ref = "runfig"}
+devassist = {id = "dev.supersam.devassist", version.ref = "devassist"}
 

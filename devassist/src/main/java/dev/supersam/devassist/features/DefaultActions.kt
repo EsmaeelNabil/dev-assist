@@ -224,6 +224,8 @@ internal object DefaultActions {
 
     private class NavigateToStoreAction : DebugAction {
         override val title: String = "Open Store Listing"
+        override val description: String?
+            get() = "Open the app's store listing in Google Play Store or browser."
 
 
         override suspend fun onAction(context: Context) {
@@ -258,6 +260,8 @@ internal object DefaultActions {
 
     private class NavigateToSettingsAction : DebugAction {
         override val title: String = "Open App Settings"
+        override val description: String?
+            get() = "Open the app's settings page in system settings."
 
 
         override suspend fun onAction(context: Context) {
@@ -280,6 +284,9 @@ internal object DefaultActions {
 
     private class OpenDeveloperOptionsAction : DebugAction {
         override val title: String = "Open Developer Options"
+        override val description: String?
+            get() = "Open the Developer Options screen in system settings."
+
         override suspend fun onAction(context: Context) {
             try {
                 context.startActivity(Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS).apply {
@@ -298,6 +305,9 @@ internal object DefaultActions {
 
     private class ClearCacheAction : DebugAction {
         override val title: String = "Clear Cache"
+        override val description: String?
+            get() = "Clear app cache directories (internal, external, code cache)."
+
         override suspend fun onAction(context: Context) {
             var result = false
             withContext(Dispatchers.IO) {
@@ -316,6 +326,9 @@ internal object DefaultActions {
 
     private class RestartAppAction : DebugAction {
         override val title: String = "Restart App"
+        override val description: String?
+            get() = "Restart the app process. This may not work on all devices."
+
         override suspend fun onAction(context: Context) {
 
 
@@ -350,6 +363,9 @@ internal object DefaultActions {
 
     private class KillAppAction : DebugAction {
         override val title: String = "⚠️ Kill App Process"
+        override val description: String?
+            get() = "Forcefully kill the app process. This may not work on all devices."
+
         override suspend fun onAction(context: Context) {
 
             withContext(Dispatchers.Main) {
@@ -363,6 +379,9 @@ internal object DefaultActions {
 
     private class ClearAppDataAction : DebugAction {
         override val title: String = "⛔ Clear App Data"
+        override val description: String?
+            get() = "Clear app data (cache, files, shared preferences). This may not work on all devices."
+
         override suspend fun onAction(context: Context) {
             var success = false
 
@@ -398,6 +417,8 @@ internal object DefaultActions {
 
     private class ClearCrashLogsAction : DebugAction {
         override val title: String = "Clear Crash Logs"
+        override val description: String?
+            get() = "Clear crash logs from the device. This may not work on all devices."
 
 
         override suspend fun onAction(context: Context) {
@@ -414,6 +435,9 @@ internal object DefaultActions {
 
     private class ExportSharedPreferencesAction : ExportFileAction("prefs") {
         override val title: String = "Export SharedPreferences"
+        override val description: String?
+            get() = "Export SharedPreferences files to a shareable directory."
+
         private var lastSelectedFile: String? = null
 
 
@@ -434,6 +458,9 @@ internal object DefaultActions {
 
     private class ExportDatabaseAction : ExportFileAction("db") {
         override val title: String = "Export Databases"
+        override val description: String?
+            get() = "Export database files to a shareable directory."
+
         override suspend fun getFilesToExport(context: Context): List<File> {
             return withContext(Dispatchers.IO) {
                 val dbDir = context.getDatabasePath("anyname.db").parentFile
