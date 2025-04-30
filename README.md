@@ -19,7 +19,7 @@ and in `build.gradle.kts`
 
 ```gradle
 dependencies {
-    debugImplementation("com.github.EsmaeelNabil:dev-assist:v0.0.1")
+    debugImplementation("com.github.EsmaeelNabil:dev-assist:0.0.1-beta")
 }
 ```
 
